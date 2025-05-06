@@ -3,7 +3,6 @@ import 'dart:typed_data';
 
 import 'package:uuid/uuid.dart';
 
-import 'exceptions.dart';
 import 'header.dart';
 
 /// Possible types of [EventStreamHeader].
@@ -102,10 +101,6 @@ final class EventStreamHeaderCodec {
           );
           position += 16;
           break;
-        default:
-          throw const EventStreamHeaderDecodeException(
-            'Unrecognized header type',
-          );
       }
 
       out.add(header);
